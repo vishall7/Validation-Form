@@ -1,14 +1,16 @@
 import React from 'react'
 
-function NameInput({name, label, type, id, value, onChange, formErrors, isSubmit}) {
+function InputBox({name, label, type, id, value, onChange, formErrors, isSubmit, style}) {
+  
   return (
     <div className="flex flex-col w-full ">              
       <input 
         id={id} 
-        className='border rounded-lg outline-none h-7 p-2 py-4 text-zinc-700 text-md' 
+        className='border rounded-lg outline-none h-7 p-2 py-4 text-zinc-700 text-md w-full' 
         type={type} name={name}
         value={value}
-        onChange={onChange}  
+        onChange={onChange}
+        style={style}  
         />
       {
         Object.keys(formErrors).length !== 0  && formErrors[name] && isSubmit   
@@ -23,4 +25,4 @@ function NameInput({name, label, type, id, value, onChange, formErrors, isSubmit
   )
 }
 
-export default NameInput
+export default InputBox
