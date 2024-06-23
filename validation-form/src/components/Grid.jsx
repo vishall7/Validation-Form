@@ -1,3 +1,4 @@
+import DateTime from './DateTime'
 import Dropdown from './Dropdown'
 import Experience from './Experience'
 import PortfolioUrl from './PortfolioUrl'
@@ -44,7 +45,16 @@ function Grid({formValues, setData, formErrors, isSubmit, setFormValues}) {
                 formErrors={formErrors} 
                 isSubmit={isSubmit}                
               />   
-          </div>       
+          </div> 
+
+          <div id='url' className='w-full '>
+            <DateTime                
+                setFormValues={setFormValues}           
+                formErrors={formErrors} 
+                isSubmit={isSubmit}
+                formValues={formValues}                
+              />   
+          </div>      
             
     </div>
   )

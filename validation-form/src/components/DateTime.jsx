@@ -30,7 +30,7 @@ function DateTime({formValues, formErrors, isSubmit, setFormValues}) {
             htmlFor='DateAndTime'>
                 Preferred Interview Time
             </label>
-            <div className='flex justify-between gap-4 items-center w-3/5 '>
+            <div className='flex justify-between gap-2 items-center w-full '>
                 <div className="w-full flex justify-center border rounded-lg px-2 py-1">
                     <label>Date: </label>
                     <input 

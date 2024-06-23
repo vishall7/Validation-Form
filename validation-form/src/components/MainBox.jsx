@@ -72,12 +72,12 @@ function MainBox({setSuccess, setShowSummary}) {
             setData={setData}
           />
 
-          <DateTime 
+          {/* <DateTime 
             formValues={formValues}
             setFormValues={setFormValues}           
             formErrors={formErrors} 
             isSubmit={isSubmit}            
-          />
+          /> */}
             
         </div>
 

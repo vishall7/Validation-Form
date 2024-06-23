@@ -5,6 +5,7 @@ export const useValidateInput = (values) => {
     useEffect(()=>{
         const errors = {}    
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+        const urlregex = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/;
         const regexMobile = /^[0-9]{10}$/;
         if(!values.firstname.trim()){
             errors.firstname = 'Firstname is required!'
@@ -35,6 +36,8 @@ export const useValidateInput = (values) => {
         }
         if(values.jobs === 'Designer' && (!values.url.trim())){
             errors.url = 'Portfolio Url is required!'
+        }else if (values.jobs === 'Designer' && !urlregex.test(values.url)){
+            errors.url = 'Portfolio Url is invalid!'
         }
         if(values.skills.length === 0){
             errors.skills = 'Atleast one skill is required!'
