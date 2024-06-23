@@ -30,6 +30,20 @@ export const useValidateInput = (values) => {
         }
         if (!values.experience.trim()) {
             errors.experience = 'Experience is required!'    
+        }else if(values.experience.trim() <= 0 || values.experience.trim() >= 20){
+            errors.experience = 'Experience is invalid!'
+        }
+        if(values.jobs === 'Designer' && (!values.url.trim())){
+            errors.url = 'Portfolio Url is required!'
+        }
+        if(values.skills.length === 0){
+            errors.skills = 'Atleast one skill is required!'
+        }
+        if(!values.DateAndTime.date){
+            errors.DateAndTime = 'Date is required!'
+        } 
+        if(!values.DateAndTime.time){
+            errors.DateAndTime = 'Time is required!'
         }
         setFormErrors(errors)        
     },[values]) 

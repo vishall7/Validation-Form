@@ -24,8 +24,13 @@ function Dropdown({formValues, setData, formErrors, isSubmit}) {
                 </select>
                 {
                     formErrors['jobs'] && 
-                    isSubmit && 
-                    <p className='text-red-500 text-sm'>{formErrors.jobs}</p>            
+                    isSubmit ? 
+                    <p className='text-red-500 text-sm'>{formErrors.jobs}</p>
+                    : <label className='text-zinc-400 text-sm ' 
+                        htmlFor={'skills'}         
+                        >
+                        Job            
+                    </label>            
                 }           
             </div>
         </div> 
